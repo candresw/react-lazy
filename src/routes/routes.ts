@@ -10,9 +10,11 @@ interface Route {
     Component: LazyExoticComponent<() => JSX.Element> | JSXComponent;
 }
 
-const Lazy1 = lazy(() => import(/* webpackChunkName: "LazyPage1"*/'../01-lazyload/pages/LazyPage'));
-const Lazy2 = lazy(() => import(/* webpackChunkName: "LazyPage2"*/'../01-lazyload/pages/LazyPage2'));
-const Lazy3 = lazy(() => import(/* webpackChunkName: "LazyPage3"*/'../01-lazyload/pages/LazyPage3'));
+const Lazy1    = lazy(() => import(/* webpackChunkName: "LazyPage1"*/'../01-lazyload/pages/LazyPage'));
+const Lazy2    = lazy(() => import(/* webpackChunkName: "LazyPage2"*/'../01-lazyload/pages/LazyPage2'));
+const Lazy3    = lazy(() => import(/* webpackChunkName: "LazyPage3"*/'../01-lazyload/pages/LazyPage3'));
+const Shopping = lazy(() => import(/* webpackChunkName: "LazyPage4"*/'../02-component-patterns/pages/ShoppingPage'));
+
 
 
 export const routes: Route[] = [
@@ -33,5 +35,11 @@ export const routes: Route[] = [
         path: 'lazy3',
         Component: Lazy3,
         name: 'Lazy3' 
+    },
+    {
+        to: '/shopping',
+        path: 'shopping',
+        Component: Shopping,
+        name: 'Shopping' 
     },
 ]
